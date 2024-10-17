@@ -1,16 +1,17 @@
 import Home from "./Pages/Home";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Landing from "./Pages/Landing";
+import Chat from "./Pages/Chat";
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
+import "./index.css";
 
 const App = () => {
   return (
     <BrowserRouter>
       <Header />
       <Routes>
-        <Route path="/home" element={<Home />} />
-        <Route path="/" element={<Landing />} />
+        <Route path="/chat" element={<Chat />} />
+        <Route path="/" element={<Home />} />
       </Routes>
       <Footer />
     </BrowserRouter>

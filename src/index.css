@@ -10,3 +10,13 @@
   font-weight: 500;
   font-style: normal;
 }
+
+.container {
+  width: 83.33%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+main {
+  height: 100vh;
+}
