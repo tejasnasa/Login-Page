@@ -4,15 +4,19 @@ import Chat from "./Pages/Chat";
 import Header from "./Components/Header";
 import Footer from "./Components/Footer";
 import "./index.css";
+import Login from "./Pages/Login";
 
 const App = () => {
   return (
     <BrowserRouter>
       <Header />
-      <Routes>
-        <Route path="/chat" element={<Chat />} />
-        <Route path="/" element={<Home />} />
-      </Routes>
+      <main className="container">
+        <Routes>
+          <Route path="/chat" element={<Chat />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+        </Routes>
+      </main>
       <Footer />
     </BrowserRouter>
   );

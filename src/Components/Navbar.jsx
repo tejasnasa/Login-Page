@@ -7,22 +7,12 @@ const Navbar = () => {
         <NavLink to="/chat" className="p-4 pe-6">
           Chat
         </NavLink>
+        <NavLink to="/login" className="p-4 pe-6">
+          Login
+        </NavLink>
         <div>
-          <button
-            className="p-3 px-5 bg-blue-600 text-white"
-            onClick={() =>
-              logout({ logoutParams: { returnTo: window.location.origin } })
-            }
-          >
-            Log Out
-          </button>
-
-          <button
-            className="p-3 px-5 bg-blue-600 text-white"
-            onClick={() => loginWithRedirect()}
-          >
-            Log In
-          </button>
+          <button className="p-3 px-5 bg-blue-600 text-white">Log Out</button>
+          <button className="p-3 px-5 bg-blue-600 text-white">Log In</button>
         </div>
       </div>
     </nav>
