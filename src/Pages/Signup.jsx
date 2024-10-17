@@ -6,10 +6,12 @@ import {
   createUserWithEmailAndPassword,
   onAuthStateChanged,
 } from "firebase/auth";
-import LoginCard from "../Components/LoginCard";
+import { collection, addDoc } from "firebase/firestore";
+import SignupCard from "../Components/SignupCard";
 
 const Login = () => {
   const [data, setData] = useState({
+    name: "",
     email: "",
     password: "",
   });
@@ -19,7 +21,7 @@ const Login = () => {
     setData({ ...data, ...inputs });
   };
   const handleSubmit = () => {
-    signInWithEmailAndPassword(auth, data.email, data.password)
+    createUserWithEmailAndPassword(auth, data.email, data.password, data.name)
       .then((response) => {
         console.log(response.user);
         const user = response.user;
@@ -31,7 +33,7 @@ const Login = () => {
 
   return (
     <section className="flex justify-center items-center h-screen">
-      <LoginCard />
+      <SignupCard />
       <div className="flex flex-wrap flex-col">
         <input
           className="m-2 p-2 border-solid border-black border-2"
@@ -60,6 +62,7 @@ const Login = () => {
         >
           Sign In
         </button>
+        <a href="/login">Login Instead</a>
       </div>
     </section>
   );
