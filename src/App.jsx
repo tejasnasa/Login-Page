@@ -6,6 +6,7 @@ import Footer from "./components/Footer";
 import "./index.css";
 import Login from "./pages/Login";
 import SignupCard from "./components/SignupCard.jsx";
+import Test from "./pages/Test.jsx";
 
 const App = () => {
   return (
@@ -17,7 +18,6 @@ const App = () => {
           <Route path="/chat" element={<Chat />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignupCard />} />
-          <Route path="/login" element={<Login />} />
         </Routes>
       </main>
       <Footer />

@@ -7,8 +7,8 @@ function GoogleSignin() {
   const googleSignIn = () => {
     signInWithPopup(auth, provider)
       .then((result) => {
-        const user = result.user;
-        console.log("User signed in:", user);
+        const name = result.user.displayName;
+        console.log(result.user.displayName);
       })
       .catch((error) => {
         console.error("Error signing in with Google:", error.message);
