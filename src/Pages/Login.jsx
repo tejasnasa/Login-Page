@@ -1,68 +1,7 @@
-import { useState } from "react";
-import { app, database } from "../../firebaseConfig";
-import {
-  getAuth,
-  signInWithEmailAndPassword,
-  createUserWithEmailAndPassword,
-  onAuthStateChanged,
-} from "firebase/auth";
-import LoginCard from "../Components/LoginCard";
+import React from "react";
 
 const Login = () => {
-  const [data, setData] = useState({
-    email: "",
-    password: "",
-  });
-  const auth = getAuth();
-  const handleInputs = (event) => {
-    let inputs = { [event.target.name]: event.target.value };
-    setData({ ...data, ...inputs });
-  };
-  const handleSubmit = () => {
-    signInWithEmailAndPassword(auth, data.email, data.password)
-      .then((response) => {
-        console.log(response.user);
-        const user = response.user;
-      })
-      .catch((err) => {
-        alert(err.message);
-      });
-  };
-
-  return (
-    <section className="flex justify-center items-center h-screen">
-      <LoginCard />
-      <div className="flex flex-wrap flex-col">
-        <input
-          className="m-2 p-2 border-solid border-black border-2"
-          type="text"
-          placeholder="Name"
-          name="name"
-          onChange={(event) => handleInputs(event)}
-        />
-        <input
-          className="m-2 p-2 border-solid border-black border-2"
-          type="email"
-          placeholder="Email"
-          name="email"
-          onChange={(event) => handleInputs(event)}
-        />
-        <input
-          className="m-2 p-2 border-solid border-black border-2"
-          type="password"
-          placeholder="Password"
-          name="password"
-          onChange={(event) => handleInputs(event)}
-        />
-        <button
-          className="m-2 p-2 border-solid border-black border-2"
-          onClick={handleSubmit}
-        >
-          Sign In
-        </button>
-      </div>
-    </section>
-  );
+  return <div>LoginCard</div>;
 };
 
 export default Login;

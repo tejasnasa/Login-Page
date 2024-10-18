@@ -1,12 +1,12 @@
-import Home from "./Pages/Home";
+import Home from "./pages/Home";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Chat from "./Pages/Chat";
-import Header from "./Components/Header";
-import Footer from "./Components/Footer";
+import Chat from "./pages/Chat";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 import "./index.css";
-import Login from "./Pages/Login";
-import Signup from "./Pages/Signup";
-import Login2 from "./Components/LoginCard";
+import Login from "./components/LoginCard";
+import Signup from "./components/SignupCard";
+import Login2 from "./pages/Login";
 
 const App = () => {
   return (
