@@ -16,6 +16,10 @@ export function signIn(email, password) {
       if (docSnap.exists()) {
         const userData = docSnap.data();
         console.log("User data:", userData);
+        const name = userData.username;
+
+        const usernameDisplay = document.getElementById("username-display");
+        usernameDisplay.textContent = `Welcome, ${name}!`;
       } else {
         alert("User does not exist");
       }

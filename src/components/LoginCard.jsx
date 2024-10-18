@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { app, database } from "../utils/firebaseConfig";
 import {
   getAuth,
@@ -7,8 +6,16 @@ import {
   onAuthStateChanged,
 } from "firebase/auth";
 import { signIn } from "../utils/signinHelpers";
+import React, { useEffect, useState } from "react"; // Import Firebase config
+import { GoogleAuthProvider, signInWithPopup, signOut } from "firebase/auth";
+import GoogleSignin from "./socialSignin/GoogleSignin";
+import GitHubSignin from "./socialSignin/GithubSignin";
+import TwitterSignin from "./socialSignin/TwitterSignin";
+import FacebookSignin from "./socialSignin/FacebookSignin";
 
 const LoginCard = () => {
+  const auth = getAuth();
+  const provider = new GoogleAuthProvider();
   const [data, setData] = useState({
     email: "",
     password: "",
@@ -45,6 +52,10 @@ const LoginCard = () => {
           Sign In
         </button>
         <a href="/signup">Create account</a>
+        <GoogleSignin />
+        <GitHubSignin />
+        <TwitterSignin />
+        <FacebookSignin />
       </div>
     </section>
   );
