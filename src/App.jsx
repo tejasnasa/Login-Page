@@ -1,4 +1,4 @@
-import Home from "./pages/Home";
+import Home from "./pages/Home.jsx";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Chat from "./pages/Chat";
 import Header from "./components/Header";
