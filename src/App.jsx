@@ -6,7 +6,6 @@ import Footer from "./components/Footer";
 import "./index.css";
 import Login from "./pages/Login";
 import SignupCard from "./components/SignupCard.jsx";
-import Test from "./pages/Test.jsx";
 
 const App = () => {
   return (
