@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { signUp } from "../../utils/signupHelpers";
 import { validateSignup } from "../../utils/validationSchema";
+import { TextField } from "@mui/material";
+import { validationStyles } from "../../utils/validationStyles";
 
 const SignupCard = () => {
   const [data, setData] = useState({
@@ -37,52 +39,61 @@ const SignupCard = () => {
   };
 
   return (
-    <section className="flex justify-center items-center h-screen">
-      <div className="flex flex-wrap flex-col">
-        <input
-          className={`m-2 p-2 border-solid border-black border-2 ${errors.name ? 'error' : ''}`}
+    <section>
+      <div className="mb-2">
+        <TextField
+          label="Name"
           type="text"
-          placeholder="Name"
           name="name"
           onChange={handleChange}
+          sx={validationStyles("name", errors)}
         />
-        <input
-          className={`m-2 p-2 border-solid border-black border-2 ${errors.email ? 'error' : ''}`}
+      </div>
+      <div className="mb-2">
+        <TextField
+          label="Email"
           type="email"
-          placeholder="Email"
           name="email"
           onChange={handleChange}
+          sx={validationStyles("email", errors)}
         />
-        <input
-          className={`m-2 p-2 border-solid border-black border-2 ${errors.password ? 'error' : ''}`}
+      </div>
+      <div className="mb-2">
+        <TextField
+          label="Password"
           type="password"
-          placeholder="Password"
           name="password"
           onChange={handleChange}
+          sx={validationStyles("password", errors)}
         />
-        <input
-          className={`m-2 p-2 border-solid border-black border-2 ${errors.phoneNum ? 'error' : ''}`}
+      </div>
+      <div className="mb-2">
+        <TextField
+          label="Phone Number"
           type="text"
-          placeholder="Mobile Number"
           name="phoneNum"
           onChange={handleChange}
+          sx={validationStyles("phoneNum", errors)}
         />
-        <textarea
-          className={`m-2 p-2 border-solid border-black border-2 ${errors.address ? 'error' : ''}`}
+      </div>
+      <div className="mb-2">
+        <TextField
+          label="Address"
           type="text"
-          placeholder="Address"
           name="address"
           onChange={handleChange}
+          sx={validationStyles("address", errors)}
         />
-        {error && <span style={{ color: "red" }}>{error}</span>}
-        <button
-          className="m-2 p-2 border-solid border-black border-2"
-          onClick={handleSubmit}
-        >
-          Sign In
-        </button>
-        <a href="/login">Login Instead</a>
       </div>
+
+      {error && <span style={{ color: "red" }}>{error}</span>}
+      <button
+        className="m-2 p-2 border-solid border-black border-2"
+        onClick={handleSubmit}
+      >
+        Sign In
+      </button>
+      <a href="/login">Login Instead</a>
     </section>
   );
 };

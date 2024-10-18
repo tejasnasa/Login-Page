@@ -16,7 +16,7 @@ function YahooSignin() {
   };
 
   return (
-    <button onClick={yahooSignIn} className="yahoo-signin-button">
+    <button onClick={yahooSignIn}>
       Log In with Yahoo
     </button>
   );

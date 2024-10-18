@@ -15,7 +15,7 @@ function GitHubSignin() {
   };
 
   return (
-    <button onClick={githubSignIn} className="github-signin-button">
+    <button onClick={githubSignIn}>
       Log In with GitHub
     </button>
   );

@@ -6,7 +6,6 @@ import Footer from "./components/Footer";
 import "./index.css";
 import Login from "./pages/Login";
 import SignupCard from "./components/login-cards/SignupCard.jsx";
-
 const App = () => {
   return (
     <BrowserRouter>

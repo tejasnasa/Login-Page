@@ -1,7 +1,8 @@
 import { signIn } from "../../utils/signinHelpers";
 import React, { useState } from "react";
-import SocialCard from "./SocialCard";
 import { validateSignin } from "../../utils/validationSchema";
+import { TextField } from "@mui/material";
+import { validationStyles } from "../../utils/validationStyles";
 
 const LoginCard = () => {
   const [data, setData] = useState({
@@ -35,32 +36,35 @@ const LoginCard = () => {
   };
 
   return (
-    <section className="flex justify-center items-center h-screen">
-      <div className="flex flex-wrap flex-col">
-        <input
-          className= {`m-2 p-2 border-solid border-black border-2 ${errors.email ? 'error' : ''}`}
-          type="email"
-          placeholder="Email"
-          name="email"
-          onChange={handleChange}
-        />
-        <input
-          className={`m-2 p-2 border-solid border-black border-2 ${errors.password ? 'error' : ''}`}
-          type="password"
-          placeholder="Password"
-          name="password"
-          onChange={handleChange}
-        />
+    <section>
+        <div className="mb-2">
+          <TextField
+            label="Email / Name"
+            type="email"
+            name="email"
+            onChange={handleChange}
+            sx={validationStyles("email", errors)}
+            fullWidth
+          />
+        </div>
+        <div>
+          <TextField
+            label="Password"
+            type="password"
+            name="password"
+            onChange={handleChange}
+            sx={validationStyles("password", errors)}
+            fullWidth
+          />
+        </div>
+
         {error && <span style={{ color: "red" }}>{error}</span>}
         <button
-          className="m-2 p-2 border-solid border-black border-2"
+          className="mt-2 p-2 border-solid border-black border-2"
           onClick={handleSubmit}
         >
           Sign In
         </button>
-        <a href="/signup">Create account</a>
-        <SocialCard />
-      </div>
     </section>
   );
 };

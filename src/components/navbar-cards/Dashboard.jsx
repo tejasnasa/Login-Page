@@ -1,16 +1,24 @@
 import React, { useEffect, useState } from "react";
 import { onAuthStateChanged, signOut } from "firebase/auth";
-import { auth } from "../../utils/firebaseConfig";
+import { auth, db } from "../../utils/firebaseConfig";
+import { doc, getDoc } from "firebase/firestore";
 
 const Dashboard = () => {
   const [user, setUser] = useState(null);
+  const [username, setUsername] = useState("");
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+    const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
       if (currentUser) {
         setUser(currentUser);
+        const userDocRef = doc(db, "users", currentUser.uid); // Assuming 'users' is your collection
+        const userDoc = await getDoc(userDocRef);
+        if (userDoc.exists()) {
+          setUsername(userDoc.data().username); // Assuming 'username' is the field in Firestore
+        }
       } else {
         setUser(null);
+        setUsername("");
       }
     });
 
@@ -31,8 +39,9 @@ const Dashboard = () => {
     <div>
       {user ? (
         <div>
-          <h1>{user.username || user.displayName}</h1>
-
+          <h1>
+            {user.username || username || user.displayName || "Anonymous User"}
+          </h1>
           <button
             onClick={handleSignOut}
             className="p-3 bg-blue-600 text-white"
