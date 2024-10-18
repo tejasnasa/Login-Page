@@ -6,7 +6,6 @@ import {
   createUserWithEmailAndPassword,
   onAuthStateChanged,
 } from "firebase/auth";
-import LoginCard from "../pages/Login";
 import { signIn } from "../utils/signinHelpers";
 
 const LoginCard = () => {
@@ -45,6 +44,7 @@ const LoginCard = () => {
         >
           Sign In
         </button>
+        <a href="/signup">Create account</a>
       </div>
     </section>
   );

@@ -2,11 +2,10 @@ import React, { useState, useRef } from "react";
 import { TextField, Box, Button } from "@mui/material";
 import {
   getAuth,
-  signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
 } from "firebase/auth";
+import SignupCard from "../components/SignupCard";
 
-// ValidatedTextField.js
 const ValidatedTextField = ({ label, validator, onChange }) => {
   const [value, setValue] = useState("");
   const [error, setError] = useState(false);
@@ -30,7 +29,6 @@ const ValidatedTextField = ({ label, validator, onChange }) => {
   );
 };
 
-// validators.js
 const nameValidator = (value) => {
   if (value.length < 3) return "Name must be at least 3 characters long";
   if (value.length > 20) return "Name must be less than 20 characters long";
@@ -55,7 +53,6 @@ const passwordValidator = (value) => {
   return false;
 };
 
-// FormValidation.js
 const Signup = () => {
   const formValid = useRef({ name: false, email: false });
 
@@ -90,8 +87,8 @@ const Signup = () => {
       component="form"
       onSubmit={handleSubmit}
       noValidate
-      className="flex flex-col w-2/6"
-    > 
+      className="flex flex-row w-2/6"
+    >
       <ValidatedTextField
         label="Name"
         validator={nameValidator}
@@ -110,8 +107,9 @@ const Signup = () => {
       <Button type="submit" variant="contained">
         Submit
       </Button>
+      <SignupCard />
     </Box>
   );
-}
+};
 
 export default Signup;

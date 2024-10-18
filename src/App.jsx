@@ -4,9 +4,8 @@ import Chat from "./pages/Chat";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import "./index.css";
-import Login from "./components/LoginCard";
-import Signup from "./components/SignupCard";
-import Login2 from "./pages/Login";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
 
 const App = () => {
   return (
@@ -18,7 +17,7 @@ const App = () => {
           <Route path="/chat" element={<Chat />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
-          <Route path="/login2" element={<Login2 />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
       </main>
       <Footer />

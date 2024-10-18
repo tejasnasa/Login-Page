@@ -1,14 +1,4 @@
 import { useState } from "react";
-import { app, database } from "../utils/firebaseConfig";
-import {
-  getAuth,
-  signInWithEmailAndPassword,
-  createUserWithEmailAndPassword,
-  onAuthStateChanged,
-} from "firebase/auth";
-import { collection, addDoc } from "firebase/firestore";
-import SignupCard from "../pages/Signup";
-import { saveAdditionalUserData } from "../utils/signupHelpers";
 import { signUp } from "../utils/signupHelpers";
 
 const SignupCard = () => {
