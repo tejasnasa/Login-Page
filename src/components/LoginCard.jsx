@@ -11,7 +11,7 @@ import { GoogleAuthProvider, signInWithPopup, signOut } from "firebase/auth";
 import GoogleSignin from "./socialSignin/GoogleSignin";
 import GitHubSignin from "./socialSignin/GithubSignin";
 import TwitterSignin from "./socialSignin/TwitterSignin";
-import FacebookSignin from "./socialSignin/FacebookSignin";
+import YahooSignin from "./socialSignin/YahooSignin";
 
 const LoginCard = () => {
   const auth = getAuth();
@@ -55,7 +55,7 @@ const LoginCard = () => {
         <GoogleSignin />
         <GitHubSignin />
         <TwitterSignin />
-        <FacebookSignin />
+        <YahooSignin />
       </div>
     </section>
   );
