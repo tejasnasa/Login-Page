@@ -1,11 +1,11 @@
 import Home from "./pages/Home.jsx";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Chat from "./pages/Chat";
-import Header from "./components/Header";
+import Header from "./components/navbar-cards/Header.jsx";
 import Footer from "./components/Footer";
 import "./index.css";
 import Login from "./pages/Login";
-import SignupCard from "./components/SignupCard.jsx";
+import SignupCard from "./components/login-cards/SignupCard.jsx";
 
 const App = () => {
   return (
