@@ -5,11 +5,11 @@ export default function DropDown({ label = "Options", onSignOut }) {
   return (
     <Menu as="div" className="relative inline-block text-left">
       <div>
-        <MenuButton className="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-md font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
+        <MenuButton className="inline-flex w-full justify-center gap-x-1.5 rounded-md  px-3 py-2 text-md font-semibold text-gray-900 shadow-sm ring-1 ring-inset">
           {label}
           <ChevronDownIcon
             aria-hidden="true"
-            className="-mr-1 h-5 w-5 text-gray-400"
+            className="-mr-1 h-5 w-5 text-gray-700"
           />
         </MenuButton>
       </div>

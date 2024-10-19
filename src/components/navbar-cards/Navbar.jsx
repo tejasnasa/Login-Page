@@ -3,7 +3,7 @@ import { onAuthStateChanged, signOut } from "firebase/auth";
 import { auth, db } from "../../utils/firebaseConfig";
 import { doc, getDoc } from "firebase/firestore";
 import { NavLink, useNavigate } from "react-router-dom";
-import DropDown from "../DropDown";
+import DropDown from "./DropDown";
 
 const Navbar = () => {
   const [user, setUser] = useState(null);

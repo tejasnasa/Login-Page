@@ -5,7 +5,7 @@ const Login = () => {
   return (
     <section className="flex justify-evenly align-middle h-screen w-11/12 mr-auto ml-auto">
       <img
-        src="/images/login.jpg"
+        src="/images/login.jpg" 
         style={{ display: "inline-block" }}
         className="h-[42rem]"
       />
