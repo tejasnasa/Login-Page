@@ -5,20 +5,17 @@ import Header from "./components/navbar-cards/Header.jsx";
 import Footer from "./components/Footer";
 import "./index.css";
 import Login from "./pages/Login";
-import SignupCard from "./components/login-cards/SignupCard.jsx";
+import Signup from "./pages/Signup.jsx";
 const App = () => {
   return (
     <BrowserRouter>
       <Header />
-      <main
-        className="work-sans-1"
-        
-      >
+      <main className="work-sans-1">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/chat" element={<Chat />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<SignupCard />} />
+          <Route path="/signup" element={<Signup />} />
         </Routes>
       </main>
       <Footer />

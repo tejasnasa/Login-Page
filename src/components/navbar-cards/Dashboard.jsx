@@ -3,7 +3,7 @@ import { onAuthStateChanged, signOut } from "firebase/auth";
 import { auth, db } from "../../utils/firebaseConfig";
 import { doc, getDoc } from "firebase/firestore";
 
-const Dashboard = () => {
+const Dash = () => {
   const [user, setUser] = useState(null);
   const [username, setUsername] = useState("");
 
@@ -11,10 +11,10 @@ const Dashboard = () => {
     const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
       if (currentUser) {
         setUser(currentUser);
-        const userDocRef = doc(db, "users", currentUser.uid); // Assuming 'users' is your collection
+        const userDocRef = doc(db, "users", currentUser.uid);
         const userDoc = await getDoc(userDocRef);
         if (userDoc.exists()) {
-          setUsername(userDoc.data().username); // Assuming 'username' is the field in Firestore
+          setUsername(userDoc.data().username);
         }
       } else {
         setUser(null);
@@ -58,4 +58,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default Dashboard; 

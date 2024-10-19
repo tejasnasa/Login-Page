@@ -39,7 +39,7 @@ const SignupCard = () => {
   };
 
   return (
-    <section>
+    <section className=" flex justify-center flex-col">
       <div className="mb-2">
         <TextField
           label="Name"
@@ -47,6 +47,7 @@ const SignupCard = () => {
           name="name"
           onChange={handleChange}
           sx={validationStyles("name", errors)}
+          fullWidth
         />
       </div>
       <div className="mb-2">
@@ -56,6 +57,7 @@ const SignupCard = () => {
           name="email"
           onChange={handleChange}
           sx={validationStyles("email", errors)}
+          fullWidth
         />
       </div>
       <div className="mb-2">
@@ -65,6 +67,7 @@ const SignupCard = () => {
           name="password"
           onChange={handleChange}
           sx={validationStyles("password", errors)}
+          fullWidth
         />
       </div>
       <div className="mb-2">
@@ -74,6 +77,7 @@ const SignupCard = () => {
           name="phoneNum"
           onChange={handleChange}
           sx={validationStyles("phoneNum", errors)}
+          fullWidth
         />
       </div>
       <div className="mb-2">
@@ -83,17 +87,25 @@ const SignupCard = () => {
           name="address"
           onChange={handleChange}
           sx={validationStyles("address", errors)}
+          fullWidth
         />
       </div>
 
-      {error && <span style={{ color: "red" }}>{error}</span>}
+      <div style={{ height: "20px" }}>
+        {error && (
+          <span
+            style={{ color: "red", visibility: error ? "visible" : "hidden" }}
+          >
+            {error}
+          </span>
+        )}
+      </div>
       <button
-        className="m-2 p-2 border-solid border-black border-2"
+        className="mt-8 p-2 border-solid border-black border-2 h-16"
         onClick={handleSubmit}
       >
         Sign In
       </button>
-      <a href="/login">Login Instead</a>
     </section>
   );
 };

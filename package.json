@@ -12,6 +12,8 @@
   "dependencies": {
     "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.13.0",
+    "@headlessui/react": "^2.1.10",
+    "@heroicons/react": "^2.1.5",
     "@mui/material": "^6.1.4",
     "dotenv": "^16.4.5",
     "firebase": "^10.14.1",

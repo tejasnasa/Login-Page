@@ -25,3 +25,19 @@ main {
   border: 2px solid red;
 }
 
+.grad {
+  background: linear-gradient(-45deg, #6b8ce9, #106eda, #03ade1, #238bd5);
+  animation: gradient 5s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}

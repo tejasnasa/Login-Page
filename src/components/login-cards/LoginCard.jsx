@@ -37,34 +37,43 @@ const LoginCard = () => {
 
   return (
     <section className=" flex justify-center flex-col">
-        <div className="mb-2">
-          <TextField
-            label="Email / Name"
-            type="email"
-            name="email"
-            onChange={handleChange}
-            sx={validationStyles("email", errors)}
-            fullWidth
-          />
-        </div>
-        <div>
-          <TextField
-            label="Password"
-            type="password"
-            name="password"
-            onChange={handleChange}
-            sx={validationStyles("password", errors)}
-            fullWidth
-          />
-        </div>
+      <div className="mb-2">
+        <TextField
+          label="Email / Name"
+          type="email"
+          name="email"
+          onChange={handleChange}
+          sx={validationStyles("email", errors)}
+          fullWidth
+        />
+      </div>
+      <div>
+        <TextField
+          label="Password"
+          type="password"
+          name="password"
+          onChange={handleChange}
+          sx={validationStyles("password", errors)}
+          fullWidth
+        />
+      </div>
 
-        {error && <span style={{ color: "red" }}>{error}</span>}
-        <button
-          className="mt-8 p-2 border-solid border-black border-2 h-16"
-          onClick={handleSubmit}
-        >
-          SIGN IN
-        </button>
+      <div style={{ height: "20px" }}>
+        {error && (
+          <span
+            style={{ color: "red", visibility: error ? "visible" : "hidden" }}
+          >
+            {error}
+          </span>
+        )}
+      </div>
+
+      <button
+        className="mt-8 p-2 border-solid border-black border-2 h-16"
+        onClick={handleSubmit}
+      >
+        SIGN IN
+      </button>
     </section>
   );
 };
