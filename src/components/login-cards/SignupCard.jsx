@@ -3,6 +3,7 @@ import { signUp } from "../../utils/signupHelpers";
 import { validateSignup } from "../../utils/validationSchema";
 import { TextField } from "@mui/material";
 import { validationStyles } from "../../utils/validationStyles";
+import { useNavigate } from "react-router-dom";
 
 const SignupCard = () => {
   const [data, setData] = useState({
@@ -14,6 +15,7 @@ const SignupCard = () => {
   });
   const [error, setError] = useState("");
   const [errors, setErrors] = useState({});
+  const navigate = useNavigate();
 
   const handleChange = (event) => {
     let inputs = { [event.target.name]: event.target.value };
@@ -33,13 +35,19 @@ const SignupCard = () => {
       setErrors(newErrors);
     } else {
       setError("");
-      signUp(data.name, data.email, data.password, data.phoneNum, data.address);
-      console.log("Signup form submitted:", data);
+      signUp(
+        data.name,
+        data.email,
+        data.password,
+        data.phoneNum,
+        data.address,
+        navigate
+      );
     }
   };
 
   return (
-    <section className=" flex justify-center flex-col">
+    <section className=" flex justify-center flex-col mb-8">
       <div className="mb-2">
         <TextField
           label="Name"
@@ -101,10 +109,10 @@ const SignupCard = () => {
         )}
       </div>
       <button
-        className="mt-8 p-2 border-solid border-black border-2 h-16"
+        className="mt-8 p-2 border-solid border-black border-2 h-16 hover:bg-black hover:text-white text-lg"
         onClick={handleSubmit}
       >
-        Sign In
+        SIGN UP
       </button>
     </section>
   );

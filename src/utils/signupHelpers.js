@@ -1,7 +1,7 @@
 import { getFirestore, doc, setDoc } from "firebase/firestore";
 import { createUserWithEmailAndPassword, getAuth } from "firebase/auth";
 
-export async function signUp(name, email, password, phoneNum, address) {
+export async function signUp(name, email, password, phoneNum, address, navigate) {
   const auth = getAuth();
   createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
@@ -14,6 +14,7 @@ export async function signUp(name, email, password, phoneNum, address) {
         phoneNum,
         address
       );
+      navigate("/chat");
     })
     .catch((error) => {
       console.error("Error: ", error.message);
@@ -21,7 +22,7 @@ export async function signUp(name, email, password, phoneNum, address) {
 }
 
 export function saveAdditionalUserData(
-  uid,
+  uid, 
   username,
   email,
   password,

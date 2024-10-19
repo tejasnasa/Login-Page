@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { validateSignin } from "../../utils/validationSchema";
 import { TextField } from "@mui/material";
 import { validationStyles } from "../../utils/validationStyles";
+import { useNavigate } from "react-router-dom";
 
 const LoginCard = () => {
   const [data, setData] = useState({
@@ -11,6 +12,7 @@ const LoginCard = () => {
   });
   const [error, setError] = useState("");
   const [errors, setErrors] = useState({});
+  const navigate = useNavigate();
 
   const handleChange = (event) => {
     let inputs = { [event.target.name]: event.target.value };
@@ -30,8 +32,7 @@ const LoginCard = () => {
       setErrors(newErrors);
     } else {
       setError("");
-      signIn(data.email, data.password);
-      console.log("Signin form submitted:", data);
+      signIn(data.email, data.password, navigate);
     }
   };
 
@@ -69,7 +70,8 @@ const LoginCard = () => {
       </div>
 
       <button
-        className="mt-8 p-2 border-solid border-black border-2 h-16"
+        id="signin"
+        className="mt-8 p-2 border-solid border-black border-2 h-16 hover:bg-black hover:text-white text-lg"
         onClick={handleSubmit}
       >
         SIGN IN

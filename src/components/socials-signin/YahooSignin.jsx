@@ -1,14 +1,15 @@
 import { getAuth, OAuthProvider, signInWithPopup } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
 
 function YahooSignin() {
   const provider = new OAuthProvider("yahoo.com");
   const auth = getAuth();
+  const navigate = useNavigate();
 
   const yahooSignIn = () => {
     signInWithPopup(auth, provider)
       .then((result) => {
-        const user = result.user;
-        console.log("User signed in with Yahoo:", user);
+        navigate("/chat");
       })
       .catch((error) => {
         console.error("Error signing in with Yahoo:", error.message);

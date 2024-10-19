@@ -1,6 +1,12 @@
 import { z } from "zod";
 
 export const signupSchema = z.object({
+  name: z
+    .string()
+    .min(3, "Name must be between 3 and 20 characters.")
+    .max(20, "Name must be between 3 and 20 characters.")
+    .regex(/^[a-zA-Z\s]*$/, "Name can only contain letters and spaces."),
+
   email: z
     .string()
     .min(1, "Email cannot be empty.")
@@ -19,12 +25,6 @@ export const signupSchema = z.object({
       message: "Password must have at least one special character.",
     }),
 
-  name: z
-    .string()
-    .min(3, "Name must be between 3 and 20 characters.")
-    .max(20, "Name must be between 3 and 20 characters.")
-    .regex(/^[a-zA-Z\s]*$/, "Name can only contain letters and spaces."),
-
   phoneNum: z
     .string()
     .min(8, "Phone number must be between 8 and 10 digits.")
@@ -40,8 +40,11 @@ export const signupSchema = z.object({
 export const signinSchema = z.object({
   email: z
     .string()
-    .min(1, "Email cannot be empty.")
-    .email("Please enter a valid email address."),
+    .min(1, "Name or email cannot be empty.")
+    .refine((value) => {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return emailRegex.test(value) || /^[a-zA-Z0-9_.-]+$/.test(value);
+    }, "Please enter a valid email or name."),
 
   password: z.string().min(6, "Password must be longer than 6 characters."),
 });

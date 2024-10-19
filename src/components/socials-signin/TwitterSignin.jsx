@@ -1,14 +1,15 @@
 import { TwitterAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
 
 function TwitterSignin() {
   const provider = new TwitterAuthProvider();
   const auth = getAuth();
+  const navigate = useNavigate();
 
   const twitterSignIn = () => {
     signInWithPopup(auth, provider)
       .then((result) => {
-        const user = result.user;
-        console.log("User signed in with Twitter:", user);
+        navigate("/chat");
       })
       .catch((error) => {
         console.error("Error signing in with Twitter:", error.message);
@@ -17,7 +18,11 @@ function TwitterSignin() {
 
   return (
     <button onClick={twitterSignIn}>
-      <img src="/images/socials/twitter.jpg" alt="twitter" className="h-10 rounded-full m-2" />
+      <img
+        src="/images/socials/twitter.jpg"
+        alt="twitter"
+        className="h-10 rounded-full m-2"
+      />
     </button>
   );
 }
