@@ -6,7 +6,7 @@ import YahooSignin from "../socials-signin/YahooSignin";
 
 const SocialCard = () => {
   return (
-    <div>
+    <div className=" ml-auto mr-auto w-4/6 flex justify-evenly mt-4">
       <GitHubSignin />
       <GoogleSignin />
       <TwitterSignin />

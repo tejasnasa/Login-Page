@@ -10,7 +10,10 @@ const App = () => {
   return (
     <BrowserRouter>
       <Header />
-      <main className="container work-sans-1">
+      <main
+        className="work-sans-1"
+        
+      >
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/chat" element={<Chat />} />

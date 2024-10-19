@@ -17,7 +17,7 @@ function TwitterSignin() {
 
   return (
     <button onClick={twitterSignIn}>
-      Log In with Twitter
+      <img src="/images/socials/twitter.jpg" alt="twitter" className="h-10 rounded-full m-2" />
     </button>
   );
 }

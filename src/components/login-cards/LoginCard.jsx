@@ -36,7 +36,7 @@ const LoginCard = () => {
   };
 
   return (
-    <section>
+    <section className=" flex justify-center flex-col">
         <div className="mb-2">
           <TextField
             label="Email / Name"
@@ -60,10 +60,10 @@ const LoginCard = () => {
 
         {error && <span style={{ color: "red" }}>{error}</span>}
         <button
-          className="mt-2 p-2 border-solid border-black border-2"
+          className="mt-8 p-2 border-solid border-black border-2 h-16"
           onClick={handleSubmit}
         >
-          Sign In
+          SIGN IN
         </button>
     </section>
   );

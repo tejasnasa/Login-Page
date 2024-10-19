@@ -15,7 +15,11 @@ function GoogleSignin() {
       });
   };
 
-  return <button onClick={googleSignIn}>Log In with Google</button>;
+  return (
+    <button onClick={googleSignIn}>
+      <img src="/images/socials/google.webp" alt="google" className="h-10 rounded-full m-2" />
+    </button>
+  );
 }
 
 export default GoogleSignin;

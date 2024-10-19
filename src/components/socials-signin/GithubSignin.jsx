@@ -16,7 +16,7 @@ function GitHubSignin() {
 
   return (
     <button onClick={githubSignIn}>
-      Log In with GitHub
+      <img src="/images/socials/github.png" alt="github" className="h-10 rounded-full m-2" />
     </button>
   );
 }

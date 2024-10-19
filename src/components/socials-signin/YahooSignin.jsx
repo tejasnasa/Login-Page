@@ -17,7 +17,7 @@ function YahooSignin() {
 
   return (
     <button onClick={yahooSignIn}>
-      Log In with Yahoo
+      <img src="/images/socials/yahoo.jpg" alt="yahoo" className="h-10 rounded-full m-2" />
     </button>
   );
 }
