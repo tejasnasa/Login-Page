@@ -17,10 +17,6 @@
   margin-left: auto;
 }
 
-main {
-  height: 100vh;
-}
-
 .error {
   border: 2px solid red;
 }

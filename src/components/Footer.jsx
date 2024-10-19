@@ -1,9 +1,7 @@
 const Footer = () => {
   return (
-    <footer className="h-15 bg-blue-200 flex justify-center items-center">
-      <a href="https://github.com/tejasnasa/Login-Page">
-        Tejas Nasa © 2024
-      </a>
+    <footer className="bg-[#f1f1f1] mt-16 p-3 text-center">
+      <a href="https://github.com/tejasnasa/Login-Page">Tejas Nasa © 2024</a>
     </footer>
   );
 };
