@@ -3,12 +3,12 @@ import { Grid } from "@mui/material";
 
 const Home = () => {
   return (
-    <section id="landing" className="w-9/12 mr-auto ml-auto h-screen m-10">
+    <section id="landing" className="w-10/12 mr-auto ml-auto">
       <Grid container spacing={6}>
         <Grid item md={5} xs={12}>
           <div>
             <p className="text-xl mb-5 mt-10">With Tejix AI</p>
-            <p className="text-[75px] font-bold leading-[100px] mb-10">
+            <p id="heading" className="text-[75px] font-bold leading-[100px] mb-10">
               Talk To The Future
             </p>
             <p className="text-justify">
