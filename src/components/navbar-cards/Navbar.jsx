@@ -32,7 +32,7 @@ const Navbar = () => {
     signOut(auth)
       .then(() => {
         console.log("User signed out successfully.");
-        navigate("/login"); // Redirect to login after sign out
+        navigate("/login");
       })
       .catch((error) => {
         console.error("Error signing out: ", error);

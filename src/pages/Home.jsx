@@ -3,7 +3,7 @@ import { Grid } from "@mui/material";
 
 const Home = () => {
   return (
-    <section className="w-9/12 mr-auto ml-auto h-screen m-10">
+    <section id="landing" className="w-9/12 mr-auto ml-auto h-screen m-10">
       <Grid container spacing={6}>
         <Grid item md={5} xs={12}>
           <div>
